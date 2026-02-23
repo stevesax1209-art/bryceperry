@@ -2099,3 +2099,68 @@ textarea {
     padding-inline: var(--space-lg);
   }
 }
+
+/* --------------------------------------------------------------------------
+   Event List (Speaking Engagements)
+   -------------------------------------------------------------------------- */
+.event-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.event-item {
+  display: flex;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  border-left: 3px solid var(--color-teal);
+  background: var(--bg-card);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.event-item--past {
+  border-left-color: var(--text-muted);
+  opacity: 0.85;
+}
+
+.event-item__date {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-teal);
+  white-space: nowrap;
+  min-width: 90px;
+  padding-top: 2px;
+}
+
+.event-item--past .event-item__date {
+  color: var(--text-muted);
+}
+
+.event-item__details {
+  flex: 1;
+}
+
+.event-item__name {
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.event-item__role {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  margin-bottom: 2px;
+}
+
+.event-item__presenter {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 2px;
+}
+
+.event-item__location {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
