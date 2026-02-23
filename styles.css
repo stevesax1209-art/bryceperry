@@ -2001,6 +2001,7 @@ textarea {
 .stagger-children.is-visible > *:nth-child(4) { opacity:1; transform:none; transition-delay:0.3s; }
 .stagger-children.is-visible > *:nth-child(5) { opacity:1; transform:none; transition-delay:0.4s; }
 .stagger-children.is-visible > *:nth-child(6) { opacity:1; transform:none; transition-delay:0.5s; }
+.stagger-children.is-visible > *:nth-child(7) { opacity:1; transform:none; transition-delay:0.6s; }
 
 /* --------------------------------------------------------------------------
    Text Utilities
