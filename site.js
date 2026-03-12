@@ -113,25 +113,43 @@
   });
 })();
 
-// ── Contact Form (client-side validation placeholder) ────────────────────────
+// ── Contact Form ─────────────────────────────────────────────────────────────
 (function () {
   const form = document.getElementById('contactForm');
   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = form.querySelector('[type="submit"]');
     const orig = btn.textContent;
-    btn.textContent = 'Message Sent!';
+    btn.textContent = 'Sending…';
     btn.disabled = true;
-    btn.classList.remove('btn--gradient');
-    btn.classList.add('btn--outline');
-    setTimeout(() => {
-      btn.textContent = orig;
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/speaking@dolifetoday.com', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      });
+
+      if (response.ok) {
+        btn.textContent = 'Message Sent! ✅';
+        btn.classList.remove('btn--gradient');
+        btn.classList.add('btn--outline');
+        setTimeout(() => {
+          btn.textContent = orig;
+          btn.disabled = false;
+          btn.classList.add('btn--gradient');
+          btn.classList.remove('btn--outline');
+          form.reset();
+        }, 4000);
+      } else {
+        throw new Error('Submission failed');
+      }
+    } catch (err) {
+      btn.textContent = 'Unable to Send — Try Again or Email Directly';
       btn.disabled = false;
-      btn.classList.add('btn--gradient');
-      btn.classList.remove('btn--outline');
-      form.reset();
-    }, 4000);
+      setTimeout(() => { btn.textContent = orig; }, 3000);
+    }
   });
 })();
