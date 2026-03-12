@@ -936,6 +936,15 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
 }
 
+
+.about-preview__visual--with-badge {
+  padding-bottom: 5rem;
+}
+
+.about-preview__visual--with-badge .about-preview__badge {
+  bottom: 0;
+}
+
 .about-preview__photo {
   width: 100%;
   aspect-ratio: 4/5;

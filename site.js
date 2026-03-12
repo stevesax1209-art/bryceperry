@@ -1,5 +1,5 @@
 /**
- * Bryce Perry — site.js
+ * Bryce Perry - site.js
  * Shared JavaScript for all pages
  */
 
@@ -58,7 +58,7 @@ async function mailerliteSubscribe(email, firstName, lastName, groupId, fields) 
       },
       body: JSON.stringify(payload)
     });
-    // 200 = updated (subscriber exists), 201 = created, 409 = already subscribed — all acceptable
+    // 200 = updated (subscriber exists), 201 = created, 409 = already subscribed - all acceptable
     return res.ok || res.status === 409;
   } catch (err) {
     console.error('MailerLite subscribe error:', err);
