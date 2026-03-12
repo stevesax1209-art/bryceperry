@@ -23,6 +23,17 @@
   <link rel="canonical" href="https://bryceperry.org/" />
   <link rel="stylesheet" href="styles.css" />
 
+  <!-- MailerLite Universal — replace ACCOUNT_ID with your MailerLite Account ID -->
+  <!-- Found at: MailerLite Dashboard → Site Settings → Account ID               -->
+  <script>
+  (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},
+  l=d.createElement(e),l.async=1,l.src=u,n=d.getElementsByTagName(e)[0],
+  n.parentNode.insertBefore(l,n);})(window,document,'script',
+  'https://assets.mailerlite.com/js/universal.js','ml');
+  ml('account', 'REPLACE_WITH_YOUR_MAILERLITE_ACCOUNT_ID');
+  </script>
+  <!-- End MailerLite Universal -->
+
   <!-- Schema.org Person Markup -->
   <script type="application/ld+json">
   {
@@ -370,6 +381,66 @@
         </div>
       </div>
     </div>
+
+    <!-- ── Newsletter Signup ─────────────────────────────────────────────────── -->
+    <section class="section newsletter-section" aria-labelledby="newsletter-heading">
+      <div class="container">
+        <div class="newsletter-inner fade-in">
+
+          <div class="newsletter-content">
+            <div class="section-badge">Stay Connected</div>
+            <h2 class="section-title" id="newsletter-heading">
+              Join the <span class="gradient-text">Community Newsletter</span>
+            </h2>
+            <p class="section-subtitle">
+              Get Bryce's latest insights on living with Parkinson's, upcoming events, 
+              new podcast episodes, and community news — delivered straight to your inbox.
+            </p>
+            <ul class="newsletter-perks" role="list">
+              <li>🎙 New podcast episode alerts</li>
+              <li>📅 Upcoming speaking event previews</li>
+              <li>💡 Weekly inspiration &amp; community stories</li>
+              <li>🔔 First access to new programs &amp; resources</li>
+            </ul>
+          </div>
+
+          <div class="newsletter-form-wrap">
+            <!--
+              OPTION A — MailerLite Embedded Form (recommended once account is set up):
+              Replace the data-form value with your MailerLite Form ID, then remove the
+              custom form below.  Form IDs are found in MailerLite → Forms → click a
+              form → the numeric ID appears in the embed code.
+            -->
+            <!-- <div class="ml-embedded" data-form="REPLACE_WITH_YOUR_MAILERLITE_FORM_ID"></div> -->
+
+            <!--
+              OPTION B — Custom form (active by default). Submits directly to MailerLite
+              API using the credentials in site.js. Replace MAILERLITE.newsletterGroupId
+              and MAILERLITE.apiKey in site.js to activate.
+            -->
+            <form id="newsletterForm" novalidate aria-label="Newsletter signup form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="nlFirstName">First Name</label>
+                  <input type="text" id="nlFirstName" name="firstName" placeholder="Jane" autocomplete="given-name" />
+                </div>
+                <div class="form-group">
+                  <label for="nlEmail">Email Address <span class="required" aria-label="required">*</span></label>
+                  <input type="email" id="nlEmail" name="email" placeholder="jane@example.com" required autocomplete="email" />
+                </div>
+              </div>
+              <button type="submit" class="btn btn--gradient btn--lg" style="width:100%">
+                Subscribe to the Newsletter →
+              </button>
+              <p class="form-note" style="margin-top:var(--space-md);text-align:center">
+                No spam. Unsubscribe anytime. Your privacy is respected.
+              </p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
 
     <!-- ── Final CTA ─────────────────────────────────────────────────────── -->
     <section class="booking-cta" aria-labelledby="booking-cta-heading">
